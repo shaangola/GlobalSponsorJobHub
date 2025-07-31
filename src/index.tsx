@@ -16,6 +16,8 @@ root.render(
       <Route path="/register" element={<Register />} />
       <Route path="/login" element={<Login />} />
       <Route path="/jobs" element={<Jobs />} />
+      {/* Catch-all route for 404s: redirect to home */}
+      <Route path="*" element={<App />} />
     </Routes>
   </BrowserRouter>
 );
