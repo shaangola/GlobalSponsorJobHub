@@ -1,76 +1,29 @@
-import Avatar from 'components/Avatar'
-import logo from 'assets/logo.svg'
+
 import Header from './Header';
 import Footer from './Footer';
 
-const randoms = [
-  [1, 2],
-  [3, 4, 5],
-  [6, 7]
-]
+import { Link } from 'react-router-dom';
 
 function App() {
   return (
     <>
       <Header />
-      <div className="relative overflow-hidden bg-white">
-        
-        <div className="h-screen sm:pb-40 sm:pt-24 lg:pb-48 lg:pt-40">
-          <div className="relative mx-auto max-w-7xl px-4 sm:static sm:px-6 lg:px-8">
-            <div className="sm:max-w-lg">
-              <div className="my-4">
-                <Avatar size="large" src={logo} />
-              </div>
-              <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
-                Welcome!
-              </h1>
-              <p className="mt-4 text-xl text-gray-500">
-                This is a boilerplate build with Vite, React 18, TypeScript,
-                Vitest, Testing Library, TailwindCSS 3, Eslint and Prettier.
-              </p>
-            </div>
-            <div className="my-10">
-              <a
-                href="#"
-                className="inline-block rounded-md border border-transparent bg-indigo-600 px-8 py-3 text-center font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-700 focus:ring-offset-2"
-              >
-                Start building for free
-              </a>
-              <div
-                aria-hidden="true"
-                className="pointer-events-none mt-10 md:mt-0 lg:absolute lg:inset-y-0 lg:mx-auto lg:w-full lg:max-w-7xl"
-              >
-                <div className="absolute sm:left-1/2 sm:top-0 sm:translate-x-8 lg:left-1/2 lg:top-1/2 lg:-translate-y-1/2 lg:translate-x-8">
-                  <div className="flex items-center space-x-6 lg:space-x-8">
-                    {randoms.map((random, number) => (
-                      <div
-                        key={`random-${random[number]}`}
-                        className="grid shrink-0 grid-cols-1 gap-y-6 lg:gap-y-8"
-                      >
-                        {random.map((number) => (
-                          <div
-                            key={`random-${number}`}
-                            className="h-64 w-44 overflow-hidden rounded-lg sm:opacity-0 lg:opacity-100"
-                          >
-                            <img
-                              src={`https://picsum.photos/600?random=${number}`}
-                              alt=""
-                              className="size-full bg-indigo-100 object-cover object-center"
-                            />
-                          </div>
-                        ))}
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+      <main className="flex flex-col items-center justify-center min-h-screen bg-gradient-to-br from-indigo-50 to-blue-100 font-poppins">
+        <section className="max-w-3xl w-full text-center py-16 px-4">
+          <h1 className="text-5xl sm:text-6xl font-extrabold text-indigo-700 mb-6 drop-shadow-lg">Centralized place for sponsorship jobs worldwide</h1>
+          <p className="text-xl text-gray-700 mb-8">Find remote, hybrid, and on-site sponsorship jobs from top companies. Connect with global employers and discover your next opportunity in one professional portal.</p>
+          <Link to="/jobs" className="inline-block bg-indigo-600 text-white px-8 py-4 rounded-lg text-lg font-semibold shadow hover:bg-indigo-700 transition">Browse Jobs</Link>
+        </section>
+        <section className="flex flex-wrap justify-center gap-8 py-8">
+          <img src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=400&q=80" alt="Remote professional 1" className="rounded-xl shadow-lg w-64 h-40 object-cover" />
+          <img src="https://images.unsplash.com/photo-1521737852567-6949f3f9f2b5?auto=format&fit=crop&w=400&q=80" alt="Remote professional 2" className="rounded-xl shadow-lg w-64 h-40 object-cover" />
+          <img src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=400&q=80" alt="Remote professional 3" className="rounded-xl shadow-lg w-64 h-40 object-cover" />
+        </section>
+      </main>
       <Footer />
+
     </>
-  )
+  );
 }
 
-export default App
+export default App;
