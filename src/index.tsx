@@ -1,4 +1,3 @@
-
 import { createRoot } from 'react-dom/client';
 import 'tailwindcss/tailwind.css';
 import App from 'components/App';
@@ -11,12 +10,14 @@ const container = document.getElementById('root') as HTMLDivElement;
 const root = createRoot(container);
 
 root.render(
-  <BrowserRouter>
+  <BrowserRouter basename="/GlobalSponsorJobHub/">
     <Routes>
       <Route path="/" element={<App />} />
       <Route path="/register" element={<Register />} />
       <Route path="/login" element={<Login />} />
       <Route path="/jobs" element={<Jobs />} />
+      {/* Catch-all route for 404s: redirect to home */}
+      <Route path="*" element={<App />} />
     </Routes>
   </BrowserRouter>
 );
