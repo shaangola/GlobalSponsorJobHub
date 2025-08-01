@@ -1,15 +1,21 @@
 import React, { useState } from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { loginWithFirebase } from '../utils/firebaseAuth';
 import { loginWithGoogle } from '../utils/firebaseAuth';
 import countryImages from '../utils/countryImages';
+
+import { getAuth } from 'firebase/auth';
 
 export default function Login() {
   const [form, setForm] = useState({ email: '', password: '', role: 'jobseeker' });
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
+  const navigate = useNavigate();
+  const fbUser = getAuth().currentUser;
+  const user = fbUser ? { displayName: fbUser.displayName || '', photoURL: fbUser.photoURL || '' } : undefined;
+
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setForm({ ...form, [e.target.name]: e.target.value });
@@ -30,7 +36,7 @@ export default function Login() {
 
   return (
     <>
-      <Header />
+      <Header user={user} />
       <div className="min-h-screen flex">
         <div className="w-1/2 bg-gray-50 flex flex-col justify-center items-center p-8">
         <div className="grid grid-cols-2 gap-4">
@@ -88,7 +94,7 @@ export default function Login() {
               setError('');
               try {
                 await loginWithGoogle();
-                // redirect or show success
+                navigate('/my-account/profile', { replace: true });
               } catch (err: any) {
                 setError(err.message);
               }

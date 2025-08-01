@@ -162,9 +162,11 @@ function Jobs() {
         {/* Left sticky banner */}
         <div className="hidden lg:flex flex-col items-center justify-center w-48 sticky top-0 h-screen z-10">
           <div className="bg-white rounded-lg shadow-lg p-4 mb-4 w-40 h-96 flex flex-col justify-center items-center">
-            <span className="font-bold text-indigo-600 mb-2">Advertisement</span>
-            <img src="https://source.unsplash.com/160x160/?ad,banner" alt="Ad Banner" className="rounded-lg mb-2" />
-            <span className="text-xs text-gray-500 text-center">Your ad here</span>
+            <span className="font-bold text-indigo-600 mb-2">Premium Service</span>
+            <img src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=400&q=80" alt="Resume Writing" className="rounded-lg mb-2 w-28 h-20 object-cover" />
+            <span className="text-xs text-gray-700 text-center font-semibold mb-2">Get a Professional Resume!</span>
+            <span className="text-xs text-gray-500 text-center mb-2">ATS-Optimized, Fast Turnaround</span>
+            <button className="mt-2 bg-indigo-600 text-white px-3 py-1 rounded text-xs font-semibold hover:bg-indigo-700 transition">Learn More</button>
           </div>
         </div>
         {/* Main job listing content */}
@@ -267,9 +269,11 @@ function Jobs() {
         {/* Right sticky banner */}
         <div className="hidden lg:flex flex-col items-center justify-center w-48 sticky top-0 h-screen z-10">
           <div className="bg-white rounded-lg shadow-lg p-4 mb-4 w-40 h-96 flex flex-col justify-center items-center">
-            <span className="font-bold text-indigo-600 mb-2">Advertisement</span>
-            <img src="https://source.unsplash.com/160x160/?ad,banner" alt="Ad Banner" className="rounded-lg mb-2" />
-            <span className="text-xs text-gray-500 text-center">Your ad here</span>
+            <span className="font-bold text-indigo-600 mb-2">ATS Resume Check</span>
+            <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=400&q=80" alt="ATS Service" className="rounded-lg mb-2 w-28 h-20 object-cover" />
+            <span className="text-xs text-gray-700 text-center font-semibold mb-2">Is Your Resume ATS-Friendly?</span>
+            <span className="text-xs text-gray-500 text-center mb-2">Scan & Improve Instantly</span>
+            <button className="mt-2 bg-indigo-600 text-white px-3 py-1 rounded text-xs font-semibold hover:bg-indigo-700 transition">Try Free</button>
           </div>
         </div>
       </div>
